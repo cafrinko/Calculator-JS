@@ -1,3 +1,7 @@
+/**alert("What calculation do you want to do: addition, subtraction, multiplication, or division?:");
+
+var answer = prompt("")**/
+
 alert("Let's add two numbers");
 var add = function(){
   var number1 = parseInt(prompt("Enter a number"));
