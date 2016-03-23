@@ -1,39 +1,49 @@
-/**alert("What calculation do you want to do: addition, subtraction, multiplication, or division?:");
-
-var answer = prompt("")**/
-
-alert("Let's add two numbers");
-var add = function(){
-  var number1 = parseInt(prompt("Enter a number"));
-  var number2 = parseInt(prompt("Enter another number"));
-  var result = (number1 + number2);
-  alert(result);
+var add = function(number1, number2) {
+  return number1 + number2;
 };
-add();
 
-alert("Let's subtract two numbers");
-var subtract = function(){
-  var number1 = parseInt(prompt("Enter a number"));
-  var number2 = parseInt(prompt("Enter another number"));
-  var result = (number1 - number2);
-  alert(result);
+var subtract = function(number1, number2) {
+  return number1 - number2;
 };
-subtract();
 
-alert("Let's multiply two numbers");
-var multiply = function(){
-  var number1 = parseInt(prompt("Enter a number"));
-  var number2 = parseInt(prompt("Enter another number"));
-  var result = (number1 * number2);
-  alert(result);
+var multiply = function(number1, number2) {
+  return number1 * number2;
 };
-multiply();
 
-alert("Let's add divide numbers");
-var divide = function(){
-  var number1 = parseInt(prompt("Enter a number"));
-  var number2 = parseInt(prompt("Enter another number"));
-  var result = (number1 / number2);
-  alert(result);
+var divide = function(number1, number2) {
+  return number1 / number2;
 };
-divide();
+
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+  });
+
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = subtract(number1, number2);
+    alert(result);
+  });
+
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = multiply(number1, number2);
+    alert(result);
+  });
+
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = divide(number1, number2);
+    alert(result);
+  });
+});
